@@ -48,4 +48,13 @@ func TestNumericFormatString(t *testing.T) {
 
 	result = NumericFormatString(0.000001)
 	assert.Equal(t, "0.000001", result)
+
+	result = NumericFormatString(22222222222222222222222222222222)
+	assert.Equal(t, "22,222,222,222,222,224,000,000,000,000,000", result)
+
+	result = NumericFormatString(22222222222222222222222.22222222222222222)
+	assert.Equal(t, "22,222,222,222,222,223,000,000", result)
+
+	result = NumericFormatString(2222.222222222222222222222222222)
+	assert.Equal(t, "2,222.222222222222", result)
 }
